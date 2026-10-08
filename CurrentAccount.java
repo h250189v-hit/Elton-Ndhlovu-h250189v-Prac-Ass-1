@@ -1,11 +1,14 @@
 public class CurrentAccount extends Account {
+    
     private double overdraftLimit;
     private double monthlyFee = 50.00;
+    
     public CurrentAccount(String accountNumber, double balance,
                           double overdraftLimit) {
         super(accountNumber, balance);
         this.overdraftLimit = overdraftLimit;
     }
+    
     @Override
     public void withdraw(double amount) {
         if (amount <= 0) {
@@ -14,8 +17,7 @@ public class CurrentAccount extends Account {
         else if (balance - amount < -overdraftLimit) {
             System.out.println("Withdrawal rejected. "
                     + "The overdraft limit has been exceeded.");
-        }
-        else {
+        }else {
             balance -= amount;
             System.out.println("Current account withdrawal successful: $"
                     + amount);
@@ -25,12 +27,10 @@ public class CurrentAccount extends Account {
             }
         }
     }
+    
     @Override
     public void endOfMonth() {
-
         balance -= monthlyFee;
-
-        System.out.println("Monthly maintenance fee of $"
-                + monthlyFee + " deducted.");
+        System.out.println("Monthly maintenance fee of $" + monthlyFee + " deducted.");
     }
 }
