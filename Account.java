@@ -1,4 +1,5 @@
 public abstract class Account {
+    
     protected String accountNumber;
     protected double balance;
 
@@ -6,6 +7,7 @@ public abstract class Account {
         this.accountNumber = accountNumber;
         this.balance = balance;
     }
+    
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -14,10 +16,11 @@ public abstract class Account {
             System.out.println("Deposit amount must be greater than zero.");
         }
     }
+    
     public double getBalance() {
         return balance;
     }
+    
     public abstract void withdraw(double amount);
-
     public abstract void endOfMonth();
 }
