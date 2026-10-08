@@ -1,13 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
+
 public class BankDemo {
+    
     public static void main(String[] args) {
+        
         List<Account> accounts = new ArrayList<>();
         accounts.add(new SavingsAccount("S001", 2000, 500));
         accounts.add(new CurrentAccount("C001", 1000, 1000));
         accounts.add(new SavingsAccount("S002", 1500, 500));
         accounts.add(new CurrentAccount("C002", 500, 1000));
-        System.out.println("===== BANK ACCOUNT DEMO =====");
+        
+        System.out.println("BANK ACCOUNT DEMO");
+        
         for (Account account : accounts) {
             System.out.println("\nAccount: " + account.accountNumber);
             System.out.println("Starting balance: $" + account.getBalance());
@@ -16,12 +21,16 @@ public class BankDemo {
             account.endOfMonth();
             System.out.println("Balance after month-end: $" + account.getBalance());
         }
-        System.out.println("\n===== SAVINGS ACCOUNT TEST =====");
+        
+        System.out.println("\nSAVINGS ACCOUNT TEST");
+        
         Account savings = new SavingsAccount("S003", 1000, 500);
         System.out.println("Starting balance: $" + savings.getBalance());
         savings.withdraw(600);
         System.out.println("Balance: $" + savings.getBalance());
-        System.out.println("\n===== CURRENT ACCOUNT TEST =====");
+        
+        System.out.println("\nCURRENT ACCOUNT TEST");
+        
         Account current = new CurrentAccount("C003", 500, 1000);
         System.out.println("Starting balance: $" + current.getBalance());
         current.withdraw(800);
