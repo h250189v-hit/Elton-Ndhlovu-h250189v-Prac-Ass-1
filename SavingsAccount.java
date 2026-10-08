@@ -1,10 +1,14 @@
 public class SavingsAccount extends Account {
+    
     private double minimumBalance;
-    private double interestRate = 0.02; // 2%
+    private double interestRate = 0.02; 
+    
     public SavingsAccount(String accountNumber, double balance, double minimumBalance) {
         super(accountNumber, balance);
         this.minimumBalance = minimumBalance;
-    }@Override
+    }
+    
+    @Override
     public void withdraw(double amount) {
         if (amount <= 0) {
             System.out.println("Withdrawal amount must be greater than zero.");
@@ -16,7 +20,9 @@ public class SavingsAccount extends Account {
             balance -= amount;
             System.out.println("Savings withdrawal successful: $" + amount);
         }
-    }@Override
+    }
+    
+    @Override
     public void endOfMonth() {
         double interest = balance * interestRate;
         balance += interest;
