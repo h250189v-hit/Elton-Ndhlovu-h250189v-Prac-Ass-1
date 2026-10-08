@@ -7,11 +7,6 @@ Course: Object Oriented Programming
 
 This repository contains my Java assignment.
 
-## Technologies Used
-
-* Java
-* Java Development Kit (JDK)
-* IntelliJ IDEA
 
 
 
